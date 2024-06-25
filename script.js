@@ -14,9 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const age = parseInt(document.getElementById('age').value);
         
         if (age >= 18) {
-            const userData = { firstName, lastName, age };
-            addUserToTable(userData);
-            storeUserData(userData);
+            if (age <= 100) {
+                const userData = { firstName, lastName, age };
+                addUserToTable(userData);
+                storeUserData(userData);  
+            } else {
+                alert('User can not be older than 100 year')
+            }
         } else {
             alert('User must be 18 years or older.');
         }
